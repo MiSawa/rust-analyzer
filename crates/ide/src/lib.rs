@@ -594,7 +594,7 @@ impl Analysis {
     }
 
     /// Performs an operation on that may be Canceled.
-    fn with_db<F, T>(&self, f: F) -> Cancelable<T>
+    pub fn with_db<F, T>(&self, f: F) -> Cancelable<T>
     where
         F: FnOnce(&RootDatabase) -> T + std::panic::UnwindSafe,
     {
